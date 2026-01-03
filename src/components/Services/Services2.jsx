@@ -536,7 +536,7 @@ const cardData = [
         },
         {
           step: "Cloud & Endpoint Protection",
-          icon: "FaCloudShieldAlt",
+          icon: "FaCloud",
           description:
             "Secure cloud environments, remote work systems, and endpoint devices.",
         },
