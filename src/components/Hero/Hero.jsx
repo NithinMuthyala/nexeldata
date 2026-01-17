@@ -1,8 +1,14 @@
 "use client"
 import { Typewriter } from 'react-simple-typewriter';
+import { usePathname, useRouter } from "next/navigation";
 
 
 const Hero = () => {
+  const router = useRouter();
+  
+    const getInTouch = () => {
+      router.push("/contact-us")
+    }
     return <section id="home" className="intro-section">
     <div className="container">
       <div className="row align-items-center text-white">
@@ -10,8 +16,8 @@ const Hero = () => {
         <div className="col-md-6 intros text-start">
           <h1 className="display-2">
             <span className="display-2--intro">
-          
-            <Typewriter
+            Welcome to Nexel Data
+            {/* <Typewriter
               words={['Welcome to Nexel Data', 'Your Digital Transformation Partner',"Empowering Innovation"]}
               loop={0}
               cursor={false}
@@ -19,11 +25,12 @@ const Hero = () => {
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}
-            />
+            /> */}
             </span>
             <div>
             <span className="display-2--description lh-base">
-            <Typewriter
+              We blend creativity with technology to build exceptional digital experiences. Whether it’s product design, enterprise software, or data security — we’ve got you covered.
+            {/* <Typewriter
              words= {[
                 " We blend creativity with technology to build exceptional digital experiences. Whether it’s product design, enterprise software, or data security — we’ve got you covered."
               ]}
@@ -33,11 +40,11 @@ const Hero = () => {
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}
-            />
+            /> */}
             </span>
             </div>
           </h1>
-          <button type="button" className="rounded-pill btn-rounded">
+          <button type="button" className="rounded-pill btn-rounded" onClick={getInTouch}>
             Get in Touch
             <span>
               <i className="fas fa-arrow-right" />

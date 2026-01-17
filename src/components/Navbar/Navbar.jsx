@@ -61,11 +61,11 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" href="/about-us">
               Our Team
             </Link>
-          </li>
+          </li> */}
         </ul>
         {/* <button type="button" className="rounded-pill btn-rounded">
           +1 728365413

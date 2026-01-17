@@ -41,7 +41,7 @@ const Footer = () => {
             style={{ width: 60, height: 2 }}
           />
           <p className="lh-lg">
-            We are the pioneers of leading in software industrry lading from last from lat 8 year w ehandle every ened to end solutuon
+            We are the pioneers of leading in software industrry lading from last from last 8 year we handle every end to end solutuon
           </p>
         </div>
         <div className="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
