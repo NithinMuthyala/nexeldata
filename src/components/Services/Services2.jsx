@@ -826,64 +826,11 @@ const cardData = [
 
 
 
+import styles from "./Services2.module.css";
+
 const Services2 = () => {
   const pathname = usePathname();
   const router = useRouter();
-
-  const contentStyle = {
-    padding: "1rem",
-    display: "flex",
-    flexDirection: "column",
-    flexGrow: 1,
-  };
-
-  const descStyle = {
-    fontSize: "0.95rem",
-    opacity: 0.85,
-    flexGrow: 1, // pushes button to bottom
-  };
-
-  const buttonStyle = {
-    marginTop: "1rem",
-    alignSelf: "flex-start",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    cursor: "pointer",
-  };
-
-  const containerStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "20px",
-    justifyContent: "center",
-    padding: "2rem",
-  };
-
-  const cardStyle = {
-    background: "#0F5A94",
-    color: "#fff",
-    borderRadius: "16px",
-    width: "350px",
-    overflow: "hidden",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
-    display: "flex",
-    flexDirection: "column",
-    transition: "transform 0.3s ease",
-    cursor: "pointer",
-  };
-
-  const imageStyle = {
-    width: "100%",
-    height: "200px",
-    objectFit: "cover",
-  };
-
-  const titleStyle = {
-    margin: 0,
-    marginBottom: "0.5rem",
-    fontSize: "1.2rem",
-  };
 
   const handleReadMore = (data) => {
     sessionStorage.setItem(data.slug, JSON.stringify(data));
@@ -891,30 +838,34 @@ const Services2 = () => {
   };
 
   return (
-    <>
+    <section className={styles.section} id="services">
       {!pathname.includes("services") && (
-        <h1 style={{ textAlign: "center" }}>Our Services</h1>
+        <h2 className={styles.heading}>
+          Our <span className="title-gradient">Services</span>
+        </h2>
       )}
 
-      <div style={containerStyle}>
+      <div className={styles.container}>
         {cardData.map((card, index) => (
-          <div key={index} style={cardStyle}>
-            <img src={card.image} alt={card.title} style={imageStyle} />
-            <div style={contentStyle}>
-              <h2 style={titleStyle}>{card.title}</h2>
-              <p style={descStyle}>{card.description}</p>
+          <div key={index} className={styles.card} onClick={() => handleReadMore(card)}>
+            <img src={card.image} alt={card.title} className={styles.image} />
+            <div className={styles.content}>
+              <h3 className={styles.title}>{card.title}</h3>
+              <p className={styles.description}>{card.description}</p>
               <button
-                className="rounded-pill btn-rounded pt-3 pb-3"
-                style={buttonStyle}
-                onClick={() => handleReadMore(card)}
+                className={styles.button}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleReadMore(card);
+                }}
               >
-                Read More <FaArrowRight size={16} />
+                Read More <FaArrowRight size={14} />
               </button>
             </div>
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

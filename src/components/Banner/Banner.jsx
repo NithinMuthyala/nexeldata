@@ -1,28 +1,21 @@
+import styles from "./Banner.module.css";
 
 const Banner = ({ name = "Test" }) => {
-
-  const image = "/images/Banners.jpg"
+  const image = "/images/Banners.jpg";
   return (
-    <div >
+    <div className={styles.bannerWrapper}>
       <div
-        className="container-fluid py-5 mb-5 banner-container"
-        style={{
-          background: `url(${image
-            }) center/cover no-repeat fixed`,
-
-        }}
+        className={styles.bannerContainer}
+        style={{ backgroundImage: `url(${image})` }}
       >
-        <div className="container py-5 banner-content" style={{ zIndex: 2000 }}>
-          <h1 style={{ textAlign: "center", color: "#fff" }}>
-            { name }
+        <div className={styles.bannerContent}>
+          <h1 className={styles.title}>
+            {name}
           </h1>
         </div>
-
-
-    
       </div>
     </div>
   );
 };
 
-export default Banner
+export default Banner;
